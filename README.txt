@@ -1,0 +1,1 @@
+This is a very simple demo of bottle running with mongo.
