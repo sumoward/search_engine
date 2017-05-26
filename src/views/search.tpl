@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html>
 <body>
-
-<h1>quick sdffsdfsdffind</h1>
-
+<h1>Login/h1>
 <form method = "POST" action="/answer">
-
-input: <input type="text" name="answer"><br>
-
-<input type="submit" value="Submit">
-
+username: <input type="text" name="username"><br>
+password: <input type="text" name="password"><br>
+<input type="submit" value="Submit"><br>
 </form>
 </body>
 </html>

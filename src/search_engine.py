@@ -1,42 +1,44 @@
 """
     very first steps input/output, a GUI, an application server and persistence
 """
-import pymongo
-import bottle 
+# import pymongo
+import bottle
 
-#connect to database
-print('connected to database')
-connection = pymongo.Connection('mongodb://localhost', safe =True)
-db = connection.test
-saved =db.saved
 
-#our search page
+# # connect to database
+# print('connected to database')
+# connection = pymongo.Connection('mongodb://localhost', safe=True)
+# db = connection.test
+# saved = db.saved
+
+# our search page
 @bottle.route('/search')
 def search():
-    print('Search engine go')
+    print('Go here to log in go')
     return bottle.template('search')
 
-#return the input to the user
+
+# return the input to the user
 @bottle.route('/answer')
 @bottle.post('/answer')
 def answer():
-    print('Search engine answer')
-    answer =bottle.request.forms.get('answer')
-    
-    #check if our answer is a string
-    if answer != '':
-        save_to_DB(answer)
+    print('Logged in')
+    username = bottle.request.forms.get('username')
+    password = bottle.request.forms.get('password')
+    # check if our answer is a string
+    if username != '':
+        save_to_DB(username)
     else:
-        answer ='put your answer in the bloody box'
-        
-    return bottle.template('answer', answer = answer)
+        username = 'put your answer in the bloody box'
+    return bottle.template('answer', username=username, password=password)
 
-#save our answer to a database
+
+# save our answer to a database
 def save_to_DB(answer):
-    pass
-    saved.insert({'answer':answer})
+    # saved.insert({'answer': answer})
     print('Saved to database')
 
-#start bottle
+
+# start bottle
 bottle.debug(True)
-bottle.run(server = 'cherrypy',host='0.0.0.0', port=8082 )
+bottle.run(host='0.0.0.0', port=8082)

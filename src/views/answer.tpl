@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html>
 <body>
-
-<h1>Your Answer is here and it is looped</h1>
-
+<h1>Your Login is here and it is looped</h1>
 
 %for i in range(10):
-
-{{answer}}		</br>
-
+{{username}} {{password}} </br>
 %end
 
+</br><a>Log Out</a>
 </body>
 </html>
