@@ -4,12 +4,16 @@
 # import pymongo
 import bottle
 
-
 # # connect to database
 # print('connected to database')
 # connection = pymongo.Connection('mongodb://localhost', safe=True)
 # db = connection.test
 # saved = db.saved
+
+@bottle.route('/')
+def open():
+    print('Test server is running')
+    return bottle.template('open')
 
 # our search page
 @bottle.route('/search')
@@ -29,7 +33,7 @@ def answer():
     if username != '':
         save_to_DB(username)
     else:
-        username = 'put your answer in the bloody box'
+        username = 'put your login in the bloody box'
     return bottle.template('answer', username=username, password=password)
 
 

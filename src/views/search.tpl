@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>Login/h1>
+<h1>Login</h1>
 <form method = "POST" action="/answer">
 username: <input type="text" name="username"><br>
 password: <input type="text" name="password"><br>
