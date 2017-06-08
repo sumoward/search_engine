@@ -29,6 +29,10 @@ def answer():
     print('Logged in')
     username = bottle.request.forms.get('username')
     password = bottle.request.forms.get('password')
+
+    if username != 'admin':
+        return '<h1>computer says no</h1>'
+
     # check if our answer is a string
     if username != '':
         save_to_DB(username)
@@ -45,4 +49,4 @@ def save_to_DB(answer):
 
 # start bottle
 bottle.debug(True)
-bottle.run(host='0.0.0.0', port=8082)
+bottle.run(host='0.0.0.0', port=9999)
