@@ -4,7 +4,7 @@
 <h1>Login</h1>
 <form method = "POST" action="/answer">
 username: <input type="text" name="username"><br>
-password: <input type="text" name="password"><br>
+password: <input type="password" name="password"><br>
 <input type="submit" value="Submit"><br>
 </form>
 </body>

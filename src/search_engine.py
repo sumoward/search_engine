@@ -30,8 +30,8 @@ def answer():
     username = bottle.request.forms.get('username')
     password = bottle.request.forms.get('password')
 
-    if username != 'admin':
-        return '<h1>computer says no</h1>'
+    # if username != 'admin':
+    #     return '<h1>computer says no</h1>'
 
     # check if our answer is a string
     if username != '':
